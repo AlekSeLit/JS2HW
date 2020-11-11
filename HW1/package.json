@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Описание пакета",
   "scripts": {
-    "start": "node script.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
