@@ -1,5 +1,5 @@
 {
-  "name": "ZaitsevDmitry",
+  "name": "alekselit",
   "version": "1.0.0",
   "description": "Описание пакета",
   "scripts": {
@@ -7,13 +7,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HaseProgram/GeekbrainsLvl2.git"
+    "url": "git+https://https://github.com/AlekSeLit/JS2HW.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HaseProgram/GeekbrainsLvl2/issues"
+    "url": "https://https://github.com/AlekSeLit/JS2HW/issues"
   },
-  "homepage": "https://github.com/HaseProgram/GeekbrainsLvl2#readme"
+  "homepage": "https://https://github.com/AlekSeLit/JS2HW#readme"
 }
