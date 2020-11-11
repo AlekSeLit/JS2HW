@@ -1,19 +1,12 @@
 {
   "name": "alekselit",
   "version": "1.0.0",
-  "description": "Описание пакета",
+  "description": "",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://https://github.com/AlekSeLit/JS2HW/HW1.git"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://https://github.com/AlekSeLit/JS2HW/HW1/issues"
-  },
-  "homepage": "https://https://github.com/AlekSeLit/JS2HW/HW1#readme"
+  "license": "ISC"
 }
