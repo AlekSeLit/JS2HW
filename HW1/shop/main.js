@@ -4,12 +4,11 @@ class Item {
   img = "";
   count = 1;
 
-  constructor(name, price, img) {
+  constructor({ name, price, img }) {
     this.name = name;
     this.price = price;
     this.img = img;
   }
-
   inсCount() {
     this.count++;
   }
@@ -171,8 +170,48 @@ class Basket extends List {
 }
 
 class ItemList extends List {
-  constructor(items) {
-    super(items);
+  constructor() {
+    super();
+    let newItem = this.fetchGoods();
+    // трансформирование массива со свойствами в массив с объектами
+    newItem = newItem.map((cur) => {
+      return new Item(cur);
+    });
+    // поштучно добавляем объекты в список через оператор spread (...)
+    this.items.push(...newItem);
+    this.render();
+  }
+
+  fetchGoods() {
+    let newItemList = [],
+      itemName = "",
+      itemPrice = 0,
+      letter = "abcdefghijklmnopqrstuvwxyz ";
+
+    for (let i = 0; i <= 10; i++) {
+      itemPrice = Math.floor(Math.random() * 150);
+      for (let j = 0; j <= 6; j++) {
+        itemName += letter.charAt(Math.floor(Math.random() * letter.length)); // Генерация случайного слова
+      }
+      let newItem = {
+        name: `${itemName}`,
+        price: itemPrice,
+        img: `img/catalog/id${i}.png`, // Для каждого товара своя уникальная фотография
+      };
+      itemName = "";
+      newItemList.push(newItem);
+    }
+
+    return newItemList;
+    // Оставил названия товаров, для дальнейшего их использования в БД
+    // [
+    //   { name: "Branded shoes", price: 300, img: "img/catalog/id0.png" },
+    //   { name: "Brand Levi T-Shirts", price: 100, img: "img/catalog/id1.png" },
+    //   { name: "Branded T-Shirts", price: 150, img: "img/catalog/id2.png" },
+    //   { name: "Leather wallet", price: 50, img: "img/catalog/id3.png" },
+    //   { name: "Ems women bag", price: 90, img: "img/catalog/id4.png" },
+    //   { name: "Branded cargos", price: 220, img: "img/catalog/id5.png" },
+    // ];
   }
   render() {
     const placeToRender = document.querySelector(`.featured-products_wrap`);
@@ -187,21 +226,8 @@ class ItemList extends List {
   }
 }
 
-// Товары
-const Item0 = new Item("Branded shoes", 300, "img/catalog/id0.png");
-const Item1 = new Item("Brand Levi T-Shirts", 100, "img/catalog/id1.png");
-const Item2 = new Item("Branded T-Shirts", 150, "img/catalog/id2.png");
-const Item3 = new Item("Leather wallet", 50, "img/catalog/id3.png");
-const Item4 = new Item("Ems women bag", 90, "img/catalog/id4.png");
-const Item5 = new Item("Branded cargos", 220, "img/catalog/id5.png");
 // Добавление товаров на страницу
 const ItemListInstance = new ItemList();
-ItemListInstance.addItem(Item0);
-ItemListInstance.addItem(Item1);
-ItemListInstance.addItem(Item2);
-ItemListInstance.addItem(Item3);
-ItemListInstance.addItem(Item4);
-ItemListInstance.addItem(Item5);
-ItemListInstance.render();
+
 // Реализация корзины
 const BasketInstance = new Basket();
