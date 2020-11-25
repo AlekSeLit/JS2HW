@@ -170,49 +170,53 @@ class Basket extends List {
 }
 
 class ItemList extends List {
+  _pageCounter = 1;
   constructor() {
     super();
-    let newItem = this.fetchGoods();
-    // трансформирование массива со свойствами в массив с объектами
-    newItem = newItem.map((cur) => {
-      return new Item(cur);
+    this.initShowMoreBtn();
+
+    let goodsPromise = this.fetchGoods();
+    goodsPromise.then(() => {
+      this.render();
     });
-    // поштучно добавляем объекты в список через оператор spread (...)
-    this.items.push(...newItem);
-    this.render();
+  }
+  initShowMoreBtn() {
+    const btn = document.querySelector(".featured-products__showmore");
+    btn.addEventListener("click", () => {
+      this.fetchGoods().then(() => {
+        this.render();
+      });
+    });
   }
 
+  hideShowMoreBtn() {
+    const btn = document.querySelector(".featured-products__showmore");
+    btn.remove();
+  }
   fetchGoods() {
-    let newItemList = [],
-      itemName = "",
-      itemPrice = 0,
-      letter = "abcdefghijklmnopqrstuvwxyz ";
-
-    for (let i = 0; i <= 10; i++) {
-      itemPrice = Math.floor(Math.random() * 150);
-      for (let j = 0; j <= 6; j++) {
-        itemName += letter.charAt(Math.floor(Math.random() * letter.length)); // Генерация случайного слова
-      }
-      let newItem = {
-        name: `${itemName}`,
-        price: itemPrice,
-        img: `img/catalog/id${i}.png`, // Для каждого товара своя уникальная фотография
-      };
-      itemName = "";
-      newItemList.push(newItem);
-    }
-
-    return newItemList;
-    // Оставил названия товаров, для дальнейшего их использования в БД
-    // [
-    //   { name: "Branded shoes", price: 300, img: "img/catalog/id0.png" },
-    //   { name: "Brand Levi T-Shirts", price: 100, img: "img/catalog/id1.png" },
-    //   { name: "Branded T-Shirts", price: 150, img: "img/catalog/id2.png" },
-    //   { name: "Leather wallet", price: 50, img: "img/catalog/id3.png" },
-    //   { name: "Ems women bag", price: 90, img: "img/catalog/id4.png" },
-    //   { name: "Branded cargos", price: 220, img: "img/catalog/id5.png" },
-    // ];
+    const result = fetch(
+      `http://localhost:3333/database/page${this._pageCounter}.json`
+    );
+    return result
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        this._pageCounter++;
+        this.items.push(
+          // трансформирование массива со свойствами в массив с объектами
+          // поштучно добавляем объекты в список через оператор spread (...)
+          ...data.data.map((cur) => {
+            return new Item(cur);
+          })
+        );
+      })
+      .catch((e) => {
+        this.hideShowMoreBtn();
+        console.log(e);
+      });
   }
+
   render() {
     const placeToRender = document.querySelector(`.featured-products_wrap`);
     if (!placeToRender) {

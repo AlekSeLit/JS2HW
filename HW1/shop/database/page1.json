@@ -1,0 +1,10 @@
+{
+  "data": [
+    { "name": "Branded shoes", "price": 300, "img": "img/catalog/id0.png" },
+    { "name": "Brand Levi T-Shirts","price": 100,"img": "img/catalog/id1.png"},
+    { "name": "Branded T-Shirts", "price": 150, "img": "img/catalog/id2.png" },
+    { "name": "Leather wallet", "price": 50, "img": "img/catalog/id3.png" },
+    { "name": "Ems women bag", "price": 90, "img": "img/catalog/id4.png" },
+    { "name": "Branded cargos", "price": 220, "img": "img/catalog/id5.png" }
+  ]
+}

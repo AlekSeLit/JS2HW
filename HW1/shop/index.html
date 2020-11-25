@@ -10,7 +10,7 @@
     <!-- Шапка сайта -->
     <header class="header">
       <div class="container header_wrap">
-        <a href="#" class="header_logo">Aditii</a>
+        <a href="#" class="header_logo">AlekSeLit</a>
         <div class="header__basket">
           <button class="header__basket__button">
             <svg
@@ -30,7 +30,6 @@
               </g>
             </svg>
           </button>
-          <!-- <p class="header__basket__price">cart is empty</p> -->
           <div class="header__basket__items header__basket__close">
             <p class="header__basket__items__empty">Сart is empty</p> 
           </div>
@@ -113,80 +112,31 @@
       <div class="container">
         <div class="featured-products_wrap">
           </div>
+          <button class="featured-products__showmore">Show more</button>
         </div>
       </div>
     </section>
-    <!-- Нижняя навигация -->
-    <nav class="footer-nav">
+    <!-- Обратная связь -->
+    <nav class="feedback">
       <div class="container">
-        <div class="footer-nav_wrap">
-          <nav class="footer-nav_list">
-            <a
-              href="#"
-              class="footer-nav_list_item footer-nav_list_item_section"
-              >Featured sale</a
-            >
-            <a href="#" class="footer-nav_list_item">Alexis Hudson</a>
-            <a href="#" class="footer-nav_list_item">American Apparel</a>
-            <a href="#" class="footer-nav_list_item">Ben Sherman</a>
-            <a href="#" class="footer-nav_list_item">Big Buddha</a>
-            <a href="#" class="footer-nav_list_item">Chanel</a>
-            <a href="#" class="footer-nav_list_item">Christian Audigier</a>
-            <a href="#" class="footer-nav_list_item">Coach</a>
-            <a href="#" class="footer-nav_list_item">Cole Haan</a>
-          </nav>
-          <nav class="footer-nav_list">
-            <a
-              href="#"
-              class="footer-nav_list_item footer-nav_list_item_section"
-              >Mens store</a
-            >
-            <a href="#" class="footer-nav_list_item">Alexis Hudson</a>
-            <a href="#" class="footer-nav_list_item">American Apparel</a>
-            <a href="#" class="footer-nav_list_item">Ben Sherman</a>
-            <a href="#" class="footer-nav_list_item">Big Buddha</a>
-            <a href="#" class="footer-nav_list_item">Chanel</a>
-            <a href="#" class="footer-nav_list_item">Christian Audigier</a>
-            <a href="#" class="footer-nav_list_item">Coach</a>
-            <a href="#" class="footer-nav_list_item">Cole Haan</a>
-          </nav>
-          <nav class="footer-nav_list">
-            <a
-              href="#"
-              class="footer-nav_list_item footer-nav_list_item_section"
-              >Women store</a
-            >
-            <a href="#" class="footer-nav_list_item">Alexis Hudson</a>
-            <a href="#" class="footer-nav_list_item">American Apparel</a>
-            <a href="#" class="footer-nav_list_item">Ben Sherman</a>
-            <a href="#" class="footer-nav_list_item">Big Buddha</a>
-            <a href="#" class="footer-nav_list_item">Chanel</a>
-            <a href="#" class="footer-nav_list_item">Christian Audigier</a>
-            <a href="#" class="footer-nav_list_item">Coach</a>
-            <a href="#" class="footer-nav_list_item">Cole Haan</a>
-          </nav>
-          <nav class="footer-nav_list">
-            <a
-              href="#"
-              class="footer-nav_list_item footer-nav_list_item_section"
-              >Quick links</a
-            >
-            <a href="#" class="footer-nav_list_item">Alexis Hudson</a>
-            <a href="#" class="footer-nav_list_item">American Apparel</a>
-            <a href="#" class="footer-nav_list_item">Ben Sherman</a>
-            <a href="#" class="footer-nav_list_item">Big Buddha</a>
-            <a href="#" class="footer-nav_list_item">Chanel</a>
-            <a href="#" class="footer-nav_list_item">Christian Audigier</a>
-            <a href="#" class="footer-nav_list_item">Coach</a>
-            <a href="#" class="footer-nav_list_item">Cole Haan</a>
-          </nav>
-        </div>
+        <h3 class="feedback__title">Feedback</h3>
+       <form action="" class="feedback__form">
+         <label for="name">Name:</label>
+         <input id="name" type="text" name="name" class="feedback__control" placeholder="Name" minlength="2" maxlength="30" required="required">
+         <label for="email" class="feedback__text">Email:</label>
+         <input id="email" type="email" name="email" class="feedback__control" placeholder="mail@mail.ru" required="required">
+         <label for="phone" class="feedback__text">Phone:</label>
+         <input id="phone" type="tel" name="phone" class="feedback__control" placeholder="77777777777" pattern="[0-9]{11}" required="required">
+         <label for="message" class="feedback__text">Message:</label>
+         <textarea id="message" name="message" class="feedback__control feedback__control__textarea" rows="3" placeholder="At least 10 characters" minlength="10" maxlength="500"></textarea>
+         <button type="submit" class="feedback__button">Submit</button>
+       </form>
       </div>
     </nav>
     <!-- Подвал сайта -->
     <footer class="footer">
       <div class="container">
-        <p class="footer_text">Copyright &copy; 2013 Css Author</p>
+        <p class="footer_text">Copyright &copy; 2020 AlekSeLit</p>
       </div>
     </footer>
     <!-- JS -->
