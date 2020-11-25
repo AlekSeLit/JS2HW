@@ -195,7 +195,8 @@ class ItemList extends List {
   }
   fetchGoods() {
     const result = fetch(
-      `http://localhost:3333/database/page${this._pageCounter}.json`
+      `https://alekselit-shop-test.herokuapp.com/database/page${this._pageCounter}.json`
+      // `http://localhost:3333/database/page${this._pageCounter}.json`
     );
     return result
       .then((res) => {
