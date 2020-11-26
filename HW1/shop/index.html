@@ -120,13 +120,13 @@
     <nav class="feedback">
       <div class="container">
         <h3 class="feedback__title">Feedback</h3>
-       <form action="" class="feedback__form">
+       <form action="" class="feedback__form" onsubmit="return false">
          <label for="name">Name:</label>
-         <input id="name" type="text" name="name" class="feedback__control" placeholder="Name" minlength="2" maxlength="30" required="required">
+         <input id="name" type="text" name="name"  class="feedback__control" placeholder="Name" minlength="2" maxlength="30" value="">
          <label for="email" class="feedback__text">Email:</label>
-         <input id="email" type="email" name="email" class="feedback__control" placeholder="mail@mail.ru" required="required">
+         <input id="email" type="email" name="email" class="feedback__control" placeholder="mail@mail.ru">
          <label for="phone" class="feedback__text">Phone:</label>
-         <input id="phone" type="tel" name="phone" class="feedback__control" placeholder="77777777777" pattern="[0-9]{11}" required="required">
+         <input id="phone" type="tel" name="phone" class="feedback__control" placeholder="77777777777">
          <label for="message" class="feedback__text">Message:</label>
          <textarea id="message" name="message" class="feedback__control feedback__control__textarea" rows="3" placeholder="At least 10 characters" minlength="10" maxlength="500"></textarea>
          <button type="submit" class="feedback__button">Submit</button>
@@ -141,5 +141,6 @@
     </footer>
     <!-- JS -->
     <script src="main.js"></script>
+    <script src="feedback.js"></script>
   </body>
 </html>
