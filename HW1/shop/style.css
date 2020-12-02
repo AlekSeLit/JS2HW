@@ -37,6 +37,7 @@
   line-height: 19px;
   color: #3cc3b5;
   text-decoration: none;
+  margin-top: 7px;
 }
 
 .header_wrap {
@@ -111,7 +112,8 @@
   text-align: center;
 }
 
-.header__basket__items_head p, .header__basket__items_item p, .header__basket__items__empty {
+.header__basket__items_head p,
+.header__basket__items_item p, .header__basket__items__empty {
   padding: 5px 0;
   font-family: "BebasNeue";
   -ms-flex-preferred-size: 100%;
@@ -345,7 +347,7 @@
           justify-content: space-between;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  margin: 48px 38px 30px;
+  margin: 10px 38px;
 }
 
 .featured-products_list {
@@ -402,22 +404,40 @@
   text-transform: uppercase;
 }
 
-.footer-nav {
+.featured-products__showmore {
+  font-family: "BebasNeue";
+  padding: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #39c8b3;
+  border: 0px solid;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin: 10px 45%;
+  outline: none;
+  cursor: pointer;
+}
+
+.feedback {
   background-color: #4ccfc1;
-  padding: 42px 150px;
+  padding: 32px 0;
+  text-align: center;
 }
 
-.footer-nav_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 38px;
+.feedback__title {
+  font-family: "BebasNeue";
+  font-size: 31px;
+  line-height: 25px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-.footer-nav_list {
+.feedback__form {
+  margin: 0 auto;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,23 +445,57 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 50%;
   font-family: "OpenSans";
   font-size: 15px;
   line-height: 28px;
 }
 
-.footer-nav_list_item {
+.feedback__control {
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 0;
+  color: #000;
+}
+
+.feedback__control__textarea {
+  resize: none;
+}
+
+.feedback__button {
+  font-family: "BebasNeue";
+  margin: 5px auto;
+  padding: 10px 25px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #39c8b3;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.feedback__button:hover {
+  background-color: #08e7ca;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.feedback_list_item {
   text-decoration: none;
 }
 
-.footer-nav_list_item_section {
+.feedback_list_item_section {
   font-family: "BebasNeue";
   font-size: 27px;
   line-height: 25px;
   margin-bottom: 27px;
 }
 
-.footer-nav_list_item:hover {
+.feedback_list_item:hover {
   color: #4ccfc1;
   background-color: #fff;
 }

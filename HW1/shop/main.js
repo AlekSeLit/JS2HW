@@ -4,12 +4,11 @@ class Item {
   img = "";
   count = 1;
 
-  constructor(name, price, img) {
+  constructor({ name, price, img }) {
     this.name = name;
     this.price = price;
     this.img = img;
   }
-
   inсCount() {
     this.count++;
   }
@@ -171,9 +170,54 @@ class Basket extends List {
 }
 
 class ItemList extends List {
-  constructor(items) {
-    super(items);
+  _pageCounter = 1;
+  constructor() {
+    super();
+    this.initShowMoreBtn();
+
+    let goodsPromise = this.fetchGoods();
+    goodsPromise.then(() => {
+      this.render();
+    });
   }
+  initShowMoreBtn() {
+    const btn = document.querySelector(".featured-products__showmore");
+    btn.addEventListener("click", () => {
+      this.fetchGoods().then(() => {
+        this.render();
+      });
+    });
+  }
+
+  hideShowMoreBtn() {
+    const btn = document.querySelector(".featured-products__showmore");
+    btn.remove();
+  }
+  fetchGoods() {
+    const result = fetch(
+      `https://alekselit-shop-test.herokuapp.com/database/page${this._pageCounter}.json`
+      // `http://localhost:3333/database/page${this._pageCounter}.json`
+    );
+    return result
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        this._pageCounter++;
+        this.items.push(
+          // трансформирование массива со свойствами в массив с объектами
+          // поштучно добавляем объекты в список через оператор spread (...)
+          ...data.data.map((cur) => {
+            return new Item(cur);
+          })
+        );
+      })
+      .catch((e) => {
+        this.hideShowMoreBtn();
+        console.log(e);
+      });
+  }
+
   render() {
     const placeToRender = document.querySelector(`.featured-products_wrap`);
     if (!placeToRender) {
@@ -187,21 +231,8 @@ class ItemList extends List {
   }
 }
 
-// Товары
-const Item0 = new Item("Branded shoes", 300, "img/catalog/id0.png");
-const Item1 = new Item("Brand Levi T-Shirts", 100, "img/catalog/id1.png");
-const Item2 = new Item("Branded T-Shirts", 150, "img/catalog/id2.png");
-const Item3 = new Item("Leather wallet", 50, "img/catalog/id3.png");
-const Item4 = new Item("Ems women bag", 90, "img/catalog/id4.png");
-const Item5 = new Item("Branded cargos", 220, "img/catalog/id5.png");
 // Добавление товаров на страницу
 const ItemListInstance = new ItemList();
-ItemListInstance.addItem(Item0);
-ItemListInstance.addItem(Item1);
-ItemListInstance.addItem(Item2);
-ItemListInstance.addItem(Item3);
-ItemListInstance.addItem(Item4);
-ItemListInstance.addItem(Item5);
-ItemListInstance.render();
+
 // Реализация корзины
 const BasketInstance = new Basket();
