@@ -1,7 +1,0 @@
-{
-    "data": [
-        { "name": "Shoes", "price": 140, "img": "img/catalog/id9.png" },
-        { "name": "Winter Boots","price": 210,"img": "img/catalog/id10.png"},
-        { "name": "Branded Winter Boots", "price": 280, "img": "img/catalog/id11.png" }
-    ]
-  }

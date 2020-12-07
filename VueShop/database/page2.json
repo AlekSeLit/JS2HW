@@ -1,0 +1,20 @@
+{
+  "7": {
+    "id": 7,
+    "name": "Branded Polo Shirt",
+    "price": 45,
+    "img": "img/catalog/id6.png"
+  },
+  "8": {
+    "id": 8,
+    "name": "Longsleeve",
+    "price": 70,
+    "img": "img/catalog/id7.png"
+  },
+  "9": {
+    "id": 9,
+    "name": "Branded Blouse",
+    "price": 100,
+    "img": "img/catalog/id8.png"
+  }
+}
