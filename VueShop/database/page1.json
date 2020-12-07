@@ -1,0 +1,38 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Branded shoes",
+    "price": 300,
+    "img": "img/catalog/id0.png"
+  },
+  "2": {
+    "id": 2,
+    "name": "Brand Levi T-Shirts",
+    "price": 100,
+    "img": "img/catalog/id1.png"
+  },
+  "3": {
+    "id": 3,
+    "name": "Branded T-Shirts",
+    "price": 150,
+    "img": "img/catalog/id2.png"
+  },
+  "4": {
+    "id": 4,
+    "name": "Leather wallet",
+    "price": 50,
+    "img": "img/catalog/id3.png"
+  },
+  "5": {
+    "id": 5,
+    "name": "Ems women bag",
+    "price": 90,
+    "img": "img/catalog/id4.png"
+  },
+  "6": {
+    "id": 6,
+      "name": "Branded cargos",
+      "price": 220,
+      "img": "img/catalog/id5.png"
+  }
+}

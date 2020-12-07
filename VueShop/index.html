@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main></main>
+   <!-- Обратная связь -->
+   <nav class="feedback">
+    <div class="container">
+      <h3 class="feedback__title">Feedback</h3>
+     <form action="" class="feedback__form" onsubmit="return false">
+       <label for="name">Name:</label>
+       <input id="name" type="text" name="name"  class="feedback__control" placeholder="Name" minlength="2" maxlength="30" value="">
+       <label for="email" class="feedback__text">Email:</label>
+       <input id="email" type="email" name="email" class="feedback__control" placeholder="mail@mail.ru">
+       <label for="phone" class="feedback__text">Phone:</label>
+       <input id="phone" type="tel" name="phone" class="feedback__control" placeholder="77777777777">
+       <label for="message" class="feedback__text">Message:</label>
+       <textarea id="message" name="message" class="feedback__control feedback__control__textarea" rows="3" placeholder="At least 10 characters" minlength="10" maxlength="500"></textarea>
+       <button type="submit" class="feedback__button">Submit</button>
+     </form>
+    </div>
+  </nav>
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer_text">Copyright &copy; 2020 AlekSeLit</p>
+    </div>
+  </footer>
+  <script src="./js/shop.js"></script>
+</body>
+</html>

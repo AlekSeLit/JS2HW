@@ -1,8 +1,0 @@
-{
-    "data": [
-      { "name": "Branded Polo Shirt", "price": 45, "img": "img/catalog/id6.png" },
-      { "name": "Longsleeve","price": 70,"img": "img/catalog/id7.png"},
-      { "name": "Branded Blouse", "price": 100, "img": "img/catalog/id8.png" }
-    ]
-  }
-  
